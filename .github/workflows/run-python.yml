@@ -2,7 +2,7 @@ name: scheduled-python
 
 on:
   schedule:
-    - cron: "*/30 * * * *"   # every 10 minutes
+    - cron: "*/10 * * * *"   # every 10 minutes
   workflow_dispatch:         # optional: run manually from the Actions tab
 
 jobs:
