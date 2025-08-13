@@ -13,7 +13,7 @@ chow_url = os.getenv('CHOW_URL')
 
 num = random.random()
 print(num)
-if  num > 0.95:
+if  num >= 0:
         
     url = "http://api.giphy.com/v1/gifs/random"
 
@@ -33,8 +33,6 @@ if  num > 0.95:
 
     result = requests.post(chow_url, json = chowmsg)
 
-    goal = random.randint(1, 72)
-    hours = 0
 
 
 
