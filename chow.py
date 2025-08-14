@@ -3,13 +3,9 @@ import json
 from urllib import parse
 import time
 import random
-from dotenv import load_dotenv
 import os
 
-load_dotenv()
-
 chow_url = os.environ["CHOW_URL"]
-
 
 num = random.random()
 
