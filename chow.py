@@ -12,7 +12,7 @@ chow_url = os.getenv('CHOW_URL')
 
 
 num = random.random()
-print(num)
+
 if  num >= 0:
         
     url = "http://api.giphy.com/v1/gifs/random"
@@ -24,7 +24,12 @@ if  num >= 0:
 
     response = requests.get("".join((url, "?", params)))
 
-    gif = response.json()['data']['images']['downsized_large']['url']
+    try:
+        gif = response.json()['data']['images']['downsized_large']['url']
+        print(gif)
+    except:
+        print(response)
+
 
     chowmsg = {
                 "content" : f"<@{os.getenv('CHOW_ID')}>",
