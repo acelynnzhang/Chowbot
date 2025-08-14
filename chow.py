@@ -13,7 +13,7 @@ chow_url = os.environ["CHOW_URL"]
 
 num = random.random()
 
-if  num >= 0:
+if  num > 0.95:
         
     url = "http://api.giphy.com/v1/gifs/random"
 
@@ -26,17 +26,18 @@ if  num >= 0:
 
     try:
         gif = response.json()['data']['images']['downsized_large']['url']
-        print(gif)
+
+        chowmsg = {
+            "content" : f"<@{os.environ['CHOW_ID']}>",
+            "embeds":[{"image":{"url":f"{gif}"}}]
+        }
+
+        result = requests.post(chow_url, json = chowmsg)
     except:
         print(response)
 
 
-    chowmsg = {
-                "content" : f"<@{os.environ['CHOW_ID']}>",
-                "embeds":[{"image":{"url":f"{gif}"}}]
-            }
 
-    result = requests.post(chow_url, json = chowmsg)
 
 
 
