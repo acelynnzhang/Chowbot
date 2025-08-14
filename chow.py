@@ -8,7 +8,7 @@ import os
 
 load_dotenv()
 
-chow_url = os.getenv('CHOW_URL')
+chow_url = os.environ["CHOW_URL"]
 
 
 num = random.random()
@@ -19,7 +19,7 @@ if  num >= 0:
 
     params = parse.urlencode({
     "tag": "job application",
-    "api_key": os.getenv('KEY')
+    "api_key": os.environ['KEY']
     })
 
     response = requests.get("".join((url, "?", params)))
@@ -32,7 +32,7 @@ if  num >= 0:
 
 
     chowmsg = {
-                "content" : f"<@{os.getenv('CHOW_ID')}>",
+                "content" : f"<@{os.environ['CHOW_ID']}>",
                 "embeds":[{"image":{"url":f"{gif}"}}]
             }
 
