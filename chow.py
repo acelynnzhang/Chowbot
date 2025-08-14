@@ -13,7 +13,7 @@ chow_url = os.environ["CHOW_URL"]
 
 num = random.random()
 
-if  num > 0.95:
+if  num >= 0:
         
     url = "http://api.giphy.com/v1/gifs/random"
 
